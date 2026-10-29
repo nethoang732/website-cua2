@@ -1,0 +1,34 @@
+{
+  "name": "eurowindow-platform",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "turbo dev --parallel",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "test:e2e": "playwright test --config tests/playwright.config.ts",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @eurowindow/api prisma:migrate",
+    "db:migrate:deploy": "pnpm --filter @eurowindow/api prisma:migrate:deploy",
+    "db:seed": "pnpm --filter @eurowindow/api prisma:seed",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "eslint-config-prettier": "10.1.8",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "0.6.14",
+    "turbo": "2.5.8",
+    "typescript": "5.9.3"
+  }
+}

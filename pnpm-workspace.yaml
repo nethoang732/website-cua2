@@ -1,0 +1,15 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+verifyDepsBeforeRun: warn
+allowBuilds:
+  '@nestjs/core': false
+  '@prisma/client': true
+  '@prisma/engines': true
+  '@scarf/scarf': false
+  esbuild: true
+  prisma: true
+  sharp: true
+  unrs-resolver: true
+overrides:
+  webpack: 5.112.2
